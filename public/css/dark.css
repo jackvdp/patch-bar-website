@@ -1904,7 +1904,7 @@ span:hover {
 }
 
 .navbar .logo {
-  width: 50px;
+  width: 150px;
 }
 
 .nav-scroll {
@@ -1948,7 +1948,7 @@ span:hover {
 }
 
 .topnav .logo {
-  width: 50px;
+  width: 150px;
 }
 
 .topnav .menu-icon {
@@ -8251,7 +8251,7 @@ footer .item .copy-right p a {
 
   .navbar .logo {
     margin-left: 15px;
-    width: 50px;
+    width: 150px;
   }
 
   .nav-scroll .navbar-collapse .nav-link,
@@ -8635,7 +8635,7 @@ footer .item .copy-right p a {
   }
 
   .navbar .logo {
-    width: 40px;
+    width: 120px;
   }
 
   .hamenu .menu-links .main-menu > li {
@@ -8651,7 +8651,7 @@ footer .item .copy-right p a {
   }
 
   .topnav .logo {
-    width: 40px;
+    width: 120px;
   }
 
   .btn-curve {
