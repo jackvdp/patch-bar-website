@@ -38,65 +38,104 @@ function ShowcaseFullscreen() {
 
   return (
     <header className="slider showcase-full">
-      <div className="swiper-container parallax-slider">
+      <div className="swiper-container parallax-slider" >
         <Swiper {...swiperOptions} className="swiper-wrapper">
-          {
-            showcasse1Data.map(slide => (
-              <SwiperSlide key={slide.id} className="swiper-slide">
-                <div className="bg-img valign" style={{ backgroundImage: `url(${slide.image})` }} data-overlay-dark="4">
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-lg-12">
-                        <div className="caption">
-                          <h1>
-                            <Link href="/project-details2/project-details2-dark">
-                              <div className="stroke" data-swiper-parallax="-2000">
-                                {slide.title.first}
-                              </div>
-                              <span data-swiper-parallax="-5000">
-                                {slide.title.second}
-                              </span>
-                            </Link>
-                            <div className="bord"></div>
-                          </h1>
-                          <div className="discover">
-                            <Link href="/project-details2/project-details2-dark">
-                              <span>
-                                Explore <br /> More
-                              </span>
-                            </Link>
-                          </div>
-                        </div>
+          {showcasse1Data.map(slide => (
+            <SwiperSlide key={slide.id} className="swiper-slide">
+              <div className="bg-img valign" style={{ backgroundImage: slide.video ? "" : `url(${slide.image})` }} data-overlay-dark="4">
+                {slide.video && <VideoComponent slide={slide} />}
+                <div className="container">
+                  <div className="row">
+                    <div className="col-lg-12">
+                      <div className="caption">
+                        <Title slide={slide} />
+                        <ExploreMore slide={slide} />
                       </div>
                     </div>
                   </div>
                 </div>
-              </SwiperSlide>
-            ))
-          }
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
-        <div className="txt-botm">
-          <div className="swiper-button-next swiper-nav-ctrl next-ctrl cursor-pointer">
-            <div>
-              <span>Next Slide</span>
-            </div>
-            <div>
-              <i className="fas fa-chevron-right"></i>
-            </div>
-          </div>
-          <div className="swiper-button-prev swiper-nav-ctrl prev-ctrl cursor-pointer">
-            <div>
-              <i className="fas fa-chevron-left"></i>
-            </div>
-            <div>
-              <span>Prev Slide</span>
-            </div>
-          </div>
 
-          <div className="swiper-pagination dots"></div>
-        </div>
+        <SliderButtons />
       </div>
     </header>
+  )
+}
+
+function VideoComponent({ slide }) {
+  return (
+    <video className='bg-image'
+      autoPlay
+      loop
+      muted
+      playsInline
+      style={{
+        position: 'absolute',
+        width: '100%',
+        left: '50%',
+        top: '50%',
+        height: '100%',
+        objectFit: 'cover',
+        transform: 'translate(-50%, -50%)',
+        zIndex: '-1',
+      }}
+      src={slide.image}
+    ></video>
+  )
+}
+
+function Title({ slide }) {
+  return (
+    <h1 className='header-font'>
+      <Link href="/project-details2/project-details2-dark">
+        <div className="stroke" data-swiper-parallax="-2000">
+          {slide.title.first}
+        </div>
+        <span data-swiper-parallax="-5000">
+          {slide.title.second}
+        </span>
+      </Link>
+    </h1>
+  )
+}
+
+function ExploreMore() {
+  return (
+    <div className="discover">
+      <Link href="/project-details2/project-details2-dark">
+        <span>
+          Explore More
+        </span>
+      </Link>
+    </div>
+  )
+}
+
+function SliderButtons() {
+  return (
+    <div className="txt-botm">
+      <div className="swiper-button-next swiper-nav-ctrl next-ctrl cursor-pointer">
+        <div>
+          <span>Next Slide</span>
+        </div>
+        <div>
+          <i className="fas fa-chevron-right"></i>
+        </div>
+      </div>
+      <div className="swiper-button-prev swiper-nav-ctrl prev-ctrl cursor-pointer">
+        <div>
+          <i className="fas fa-chevron-left"></i>
+        </div>
+        <div>
+          <span>Prev Slide</span>
+        </div>
+      </div>
+
+      <div className="swiper-pagination dots"></div>
+    </div>
   )
 }
 

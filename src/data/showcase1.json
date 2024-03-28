@@ -1,26 +1,30 @@
 [
   {
     "id": 1,
-    "title": { "first": "Midnight", "second": "Snack" },
-    "image": "/img/portfolio/full/1.jpg",
-    "sub": "Design"
+    "title": { "first": "A Night of", "second": "Experiences" },
+    "image": "/custom-content/patch.mov",
+    "sub": "Design",
+    "video": true
   },
   {
     "id": 2,
-    "title": { "first": "Fisherman", "second": "Portrait" },
+    "title": { "first": "Worldly & Elegant", "second": "Cocktails" },
     "image": "/img/portfolio/full/2.jpg",
-    "sub": "Design"
+    "sub": "Design",
+    "video": false
   },
   {
     "id": 3,
-    "title": { "first": "Tribos", "second": "Urbanas" },
+    "title": { "first": "House Beats &", "second": "Chic Music" },
     "image": "/img/portfolio/full/3.jpg",
-    "sub": "Design"
+    "sub": "Design",
+    "video": false
   },
   {
     "id": 4,
-    "title": { "first": "Monsoon", "second": "in the city" },
+    "title": { "first": "Memorable Events", "second": "In the City" },
     "image": "/img/portfolio/full/3.jpg",
-    "sub": "Design"
+    "sub": "Design",
+    "video": false
   }
 ]
