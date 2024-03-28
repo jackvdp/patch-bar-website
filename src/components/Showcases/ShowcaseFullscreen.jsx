@@ -104,7 +104,7 @@ function Title({ slide }) {
 
 function ExploreMore() {
   return (
-    <div className="discover">
+    <div className="custom-butn custom-bord" data-swiper-parallax="-8000">
       <Link href="/project-details2/project-details2-dark">
         <span>
           Explore More
