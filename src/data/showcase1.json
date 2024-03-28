@@ -8,22 +8,22 @@
   },
   {
     "id": 2,
-    "title": { "first": "Worldly & Elegant", "second": "Cocktails" },
-    "image": "/img/portfolio/full/2.jpg",
+    "title": { "first": "Elegant", "second": "Cocktails" },
+    "image": "/custom-content/cocktail.jpeg",
     "sub": "Design",
     "video": false
   },
   {
     "id": 3,
     "title": { "first": "House Beats &", "second": "Chic Music" },
-    "image": "/img/portfolio/full/3.jpg",
+    "image": "/custom-content/patch-bar.jpg",
     "sub": "Design",
     "video": false
   },
   {
     "id": 4,
     "title": { "first": "Memorable Events", "second": "In the City" },
-    "image": "/img/portfolio/full/3.jpg",
+    "image": "/custom-content/events.jpeg",
     "sub": "Design",
     "video": false
   }
