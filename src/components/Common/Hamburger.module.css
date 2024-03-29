@@ -1,0 +1,59 @@
+.navToggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 22px;
+    width: 22px;
+    cursor: pointer;
+}
+
+.setStyle {
+    height: 22px !important;
+    width: 22px !important;
+    color: white;
+}
+
+.navToggle .barOne {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    transition: all 400ms ease-in-out;
+}
+
+.navToggle .barThree {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    transition: all 400ms ease-in-out;
+}
+
+.navToggle .barTwo {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    transition: all 400ms ease-in-out;
+}
+
+/* You might adjust these selectors based on the class applied */
+.navToggle .barOneOpen {
+    height: 3px;
+    background-color: white;
+    transform: rotate(45deg);
+    transform-origin: top left;
+    width: 28px !important;
+    transition: all 400ms ease-in-out;
+}
+
+.navToggle .barTwoOpen {
+    opacity: 0;
+    transition: all 400ms ease-in-out;
+}
+
+.navToggle .barThreeOpen {
+    height: 3px;
+    background-color: white;
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+    width: 28px !important;
+    transition: all 400ms ease-in-out;
+}

@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 //= Scripts
 import initFullNavbarMenu from "@/common/initFullNavbarMenu";
+import NavbarToggleButton from "@/components/Common/Hamburger";
 
 function NavbarFullMenu({ theme, hideLogo }) {
   useEffect(() => {
@@ -20,10 +21,7 @@ function NavbarFullMenu({ theme, hideLogo }) {
             </a>
           </div>
           <div className="menu-icon valign">
-            <span className="icon">
-              <i></i>
-              <i></i>
-            </span>
+            <NavbarToggleButton />
             <span className="text" data-splitting>
               <span className="menu-text">Menu</span>
             </span>
