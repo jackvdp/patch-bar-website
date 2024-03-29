@@ -3,23 +3,20 @@ import React, { useEffect } from 'react';
 //= Scripts
 import initFullNavbarMenu from "@/common/initFullNavbarMenu";
 
-function NavbarFullMenu({ theme }) {
+function NavbarFullMenu({ theme, hideLogo }) {
   useEffect(() => {
     initFullNavbarMenu();
   }, []);
+
+  const logoClass = hideLogo ? 'logo-leaving' : 'logo-entering';
 
   return (
     <>
       <div id="navi" className={`topnav ${theme ? (theme === 'light' ? 'light' : '') : ''}`}>
         <div className="container-fluid">
           <div className="logo">
-            <a href="#0">
-              {
-                theme === 'light' ?
-                  <img src="/img/logo-dark.png" alt="logo" />
-                  :
-                  <img src="/img/logo-light.png" alt="logo" />
-              }
+            <a href="#0" className={logoClass}>
+              <img src="/custom-content/logo-white.svg" alt="logo" />
             </a>
           </div>
           <div className="menu-icon">
