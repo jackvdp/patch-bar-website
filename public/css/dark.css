@@ -142,6 +142,7 @@ p {
   font-size: 16px;
   font-weight: 300;
   line-height: 2;
+  letter-spacing: 2px;
   margin: 0;
 }
 
@@ -1984,16 +1985,38 @@ span:hover {
 }
 
 .topnav .menu-icon .text {
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
   padding-left: 15px;
   display: table-cell;
   vertical-align: middle;
   position: relative;
 }
 
+.topnav .menu-icon .text .menu-text {
+  opacity: 1;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transition-delay: 0.4s;
+  -o-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.topnav .menu-icon .text.open .menu-text {
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transition-delay: 0.4s;
+  -o-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
 .topnav .menu-icon .text:after {
-  content: "close";
+  transition-delay: 0s;
+  content: "Close";
   position: absolute;
   top: 0;
   left: 0;
@@ -9196,13 +9219,23 @@ section.next-prog.section-padding {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
 .logo-entering {

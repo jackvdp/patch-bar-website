@@ -19,7 +19,7 @@ function NavbarFullMenu({ theme, hideLogo }) {
               <img src="/custom-content/logo-white.svg" alt="logo" />
             </a>
           </div>
-          <div className="menu-icon">
+          <div className="menu-icon valign">
             <span className="icon">
               <i></i>
               <i></i>
