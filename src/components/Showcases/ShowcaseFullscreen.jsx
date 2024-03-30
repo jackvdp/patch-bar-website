@@ -111,10 +111,10 @@ function Title({ slide }) {
   return (
     <h1 className='header-font'>
       <Link href="/project-details2/project-details2-dark">
-        <div className="stroke" data-swiper-parallax="-2000">
+        <div className="stroke header-font" data-swiper-parallax="-2000">
           {slide.title.first}
         </div>
-        <span data-swiper-parallax="-5000">
+        <span className="header-font" data-swiper-parallax="-5000">
           {slide.title.second}
         </span>
       </Link>

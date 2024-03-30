@@ -63,7 +63,8 @@
 }
 
 .header-font {
-  font-family: 'Blacker Sans Display Trial', sans-serif;
+  font-family: 'Red Hat Display', sans-serif;
+  letter-spacing: 1px;
 }
 
 * {
@@ -1693,14 +1694,14 @@ span:hover {
 }
 
 .custom-butn.custom-bord {
-  border: 2px solid #fff;
+  background: #ff9100;
+  border: 2px solid #ff9100;
+  color: #212529;
   border-radius: 9999px;
 }
 
 .custom-butn.custom-bord:hover {
-  background: #ff9100;
-  border: 2px solid #212529;
-  color: #212529;
+  filter: brightness(1.2);
 }
 
 .custom-gap>* {
@@ -2520,15 +2521,23 @@ span:hover {
 
 .nav-button-faded {
   opacity: 0.5;
+  color: #fff;
+}
+
+.nav-button-faded:hover {
+  opacity: 1;
+  color: #fff;
+  transition: opacity 0.3s ease
 }
 
 .nav-button-selected {
   opacity: 1;
+  color: #ff9100
 }
 
 .nav-button-faded,
 .nav-button-selected {
-  transition: opacity color 0.3s ease;
+  transition: opacity 0.3s ease, color 0.3s ease;
   text-transform: uppercase;
   font-weight: 500;
 }
