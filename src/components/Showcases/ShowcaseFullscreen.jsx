@@ -13,6 +13,8 @@ import CapsuleButton from '@/components/Common/CapsuleButton';
 function ShowcaseFullscreen({ onSliderChange }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const swiperRef = React.useRef(null);
+
   useEffect(() => {
     removeSlashFromBagination();
   }, []);
@@ -28,6 +30,7 @@ function ShowcaseFullscreen({ onSliderChange }) {
       nextEl: ".txt-botm .swiper-button-next",
     },
     onSwiper: (swiper) => {
+      swiperRef.current = swiper;
       setTimeout(() => {
         for (var i = 0; i < swiper.slides.length; i++) {
           swiper.slides[i].childNodes[0].setAttribute(
@@ -76,7 +79,7 @@ function ShowcaseFullscreen({ onSliderChange }) {
           ))}
         </Swiper>
 
-        <SliderButtons />
+        <SliderButtons swiper={swiperRef} currentIndex={currentIndex} />
       </div>
     </header>
   )
@@ -129,29 +132,30 @@ function ExploreMore({ slide }) {
   );
 }
 
-function SliderButtons() {
+function SliderButtons({ swiper, currentIndex }) {
+  const goToSlide = (index) => {
+    if (swiper && swiper.current) {
+      swiper.current.slideTo(index);
+    }
+  };
+
   return (
     <div className="txt-botm">
-      <div className="swiper-button-next swiper-nav-ctrl next-ctrl cursor-pointer">
-        <div>
-          <span>Next Slide</span>
+      {showcasse1Data.map((slide, index) => (
+        <div
+          key={slide.id}
+          className="cursor-pointer"
+          onClick={() => goToSlide(index)}
+        >
+          <div>
+            <span className={currentIndex === index ? "nav-button-selected" : "nav-button-faded"}>{slide.caption}</span>
+          </div>
         </div>
-        <div>
-          <i className="fas fa-chevron-right"></i>
-        </div>
-      </div>
-      <div className="swiper-button-prev swiper-nav-ctrl prev-ctrl cursor-pointer">
-        <div>
-          <i className="fas fa-chevron-left"></i>
-        </div>
-        <div>
-          <span>Prev Slide</span>
-        </div>
-      </div>
+      ))}
 
       <div className="swiper-pagination dots"></div>
     </div>
-  )
+  );
 }
 
 export default ShowcaseFullscreen;

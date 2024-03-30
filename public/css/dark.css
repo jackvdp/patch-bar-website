@@ -1703,7 +1703,7 @@ span:hover {
   color: #212529;
 }
 
-.custom-gap > * {
+.custom-gap>* {
   margin-right: 2rem;
 }
 
@@ -2513,6 +2513,24 @@ span:hover {
   left: 0;
   width: 100%;
   z-index: 8;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav-button-faded {
+  opacity: 0.5;
+}
+
+.nav-button-selected {
+  opacity: 1;
+}
+
+.nav-button-faded,
+.nav-button-selected {
+  transition: opacity color 0.3s ease;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .slider .txt-botm .swiper-nav-ctrl {
