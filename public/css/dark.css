@@ -87,7 +87,7 @@ body {
   line-height: 1.5;
   font-weight: 400;
   overflow-x: hidden !important;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Red Hat Display", sans-serif;
 }
 
 img {
@@ -161,7 +161,7 @@ span:hover {
 }
 
 .custom-font {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Red Hat Display", sans-serif;
 }
 
 .color-font {
