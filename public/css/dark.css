@@ -1046,11 +1046,10 @@ span:hover {
       left top,
       right top,
       from(#12c2e9),
-      color-stop(#c471ed),
-      to(#f64f59));
-  background: -webkit-linear-gradient(left, #12c2e9, #c471ed, #f64f59);
-  background: -o-linear-gradient(left, #12c2e9, #c471ed, #f64f59);
-  background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+      to(rgb(255, 132, 0)));
+  background: -webkit-linear-gradient(left, #12c2e9, rgb(255, 132, 0));
+  background: -o-linear-gradient(left, #12c2e9, rgb(255, 132, 0));
+  background: linear-gradient(to right, #12c2e9, rgb(255, 132, 0));
 }
 
 .pace.pace-inactive {
@@ -1077,7 +1076,7 @@ span:hover {
   left: 0;
   height: 50%;
   width: 100%;
-  background: #252531;
+  background: rgba(45, 50, 80, 1);
   -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   -o-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
