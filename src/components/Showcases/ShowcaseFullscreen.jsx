@@ -8,6 +8,7 @@ import { Parallax, Navigation, Mousewheel } from 'swiper';
 import removeSlashFromBagination from "@/common/removeSlashpagination";
 //= Static Data
 import showcasse1Data from "@/data/showcase1.json";
+import CapsuleButton from '@/components/Common/CapsuleButton';
 
 function ShowcaseFullscreen({ onSliderChange }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -118,16 +119,14 @@ function Title({ slide }) {
   )
 }
 
-function ExploreMore() {
+function ExploreMore({ slide }) {
   return (
-    <div className="custom-butn custom-bord" data-swiper-parallax="-8000">
-      <Link href="/project-details2/project-details2-dark">
-        <span>
-          Explore More
-        </span>
-      </Link>
+    <div className='custom-gap'>
+      {slide.links.map((link, index) => (
+        <CapsuleButton key={index} text={link.title} link={link.url} />
+      ))}
     </div>
-  )
+  );
 }
 
 function SliderButtons() {

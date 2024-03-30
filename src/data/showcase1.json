@@ -3,28 +3,52 @@
     "id": 1,
     "title": { "first": "A Night of", "second": "Experiences" },
     "image": "/custom-content/patch.mov",
-    "sub": "Design",
-    "video": true
+    "video": true,
+    "links": [
+      {
+        "title": "Book Now",
+        "url": "/book"
+      },
+      {
+        "title": "Locations",
+        "url": "/locations"
+      }
+    ]
   },
   {
     "id": 2,
     "title": { "first": "Elegant", "second": "Cocktails" },
     "image": "/custom-content/cocktail.jpeg",
-    "sub": "Design",
-    "video": false
+    "video": false,
+    "links": [
+      {
+        "title": "View Cocktails",
+        "url": "/cocktails"
+      }
+    ]
   },
   {
     "id": 3,
     "title": { "first": "House Beats &", "second": "Chic Music" },
     "image": "/custom-content/patch-bar.jpg",
-    "sub": "Design",
-    "video": false
+    "video": false,
+    "links": [
+      {
+        "title": "Listen",
+        "url": "/music"
+      }
+    ]
   },
   {
     "id": 4,
     "title": { "first": "Memorable Events", "second": "In the City" },
     "image": "/custom-content/events.jpeg",
-    "sub": "Design",
-    "video": false
+    "video": false,
+    "links": [
+      {
+        "title": "Enquire",
+        "url": "/events"
+      }
+    ]
   }
 ]
