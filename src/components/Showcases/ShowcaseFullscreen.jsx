@@ -58,6 +58,7 @@ function ShowcaseFullscreen({ onSliderChange }) {
                           index === 0 ?
                             (<>
                               <img src="/custom-content/logo-white.svg" alt="logo" className={currentIndex === 0 ? "logo logo-entering" : "logo logo-leaving"} />
+                              <ExploreMore slide={slide} />
                             </>)
                             :
                             (<>
