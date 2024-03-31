@@ -1693,14 +1693,16 @@ span:hover {
 }
 
 .custom-butn.custom-bord {
-  background: rgb(255, 132, 0);
-  border: 2px solid rgb(255, 132, 0);
-  color: rgba(45, 50, 80, 1);
+  background: transparent;
+  border: 2px solid white;
+  color: white;
   border-radius: 9999px;
 }
 
 .custom-butn.custom-bord:hover {
-  filter: brightness(1.2);
+  background: rgb(255, 132, 0);
+  border: 2px solid rgb(255, 132, 0);
+  color: rgba(45, 50, 80, 1);
 }
 
 .custom-gap>* {

@@ -3,7 +3,7 @@ import getSiblings from "./getSiblings";
 import animateElement from "./animateElement";
 import delay from "./delay";
 
-const initFullNavbarMenu = () => {
+const initFullNavbarMenu = (callback) => {
   function noScroll() {
     window.scrollTo(0, 0);
   }
@@ -14,6 +14,7 @@ const initFullNavbarMenu = () => {
   if (menuIcon) {
     menuIcon.addEventListener("click", function () {
       open = !open;
+      callback(open);
       document.querySelector(".hamenu").classList.toggle("open");
       if (open) {
         animateElement(document.querySelector(".hamenu"), "0px");

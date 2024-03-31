@@ -7,9 +7,7 @@ import Loading from '@/components/Common/Loader';
 import NavbarFullMenu from '@/components/Common/NavbarFullMenu';
 import ShowcasesFullScreen from '@/components/Showcases/ShowcaseFullscreen';
 
-
 export default function ShowcasePage() {
-
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
