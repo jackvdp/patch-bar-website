@@ -15,7 +15,7 @@ function CapsuleButton({
         <div className={`custom-butn custom-bord ${topMargin && "mt-40"} ${rightMargin && "mr-4"} ${small && "small"} ${small && (!icon || iconActive) && "orange"}`} onClick={iconCallback && iconCallback} data-swiper-parallax="-8000">
             {
                 icon ?
-                    <i onClick={iconCallback} className={`fas ${icon}`}></i>
+                    <i className={`fas ${icon}`}></i>
                     :
                     internalLink ?
                         <div onClick={internalLink}>

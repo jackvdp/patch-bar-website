@@ -2,78 +2,78 @@ import React, { useState, useEffect, useRef } from 'react';
 import CapsuleButton from './CapsuleButton';
 
 const MusicPlayer = () => {
+    const [audio, setAudio] = useState(null);
     const [trackQueue, setTrackQueue] = useState([]);
-    const [currentTrackIndex, setCurrentTrackIndex] = useState(-1); // No track selected initially
     const [isLoading, setIsLoading] = useState(false);
+    const currentTrackIndexRef = useRef(0);
     const audioRef = useRef(null);
 
-    useEffect(() => {
-        audioRef.current = new Audio();
-        const fetchPlaylistDetails = async () => {
-            setIsLoading(true);
-            try {
-                const playlistId = 'pl.u-b3bM3L4hyljR5po';
-                const response = await fetch(`https://api.music.apple.com/v1/catalog/gb/playlists/${playlistId}`, {
-                    headers: {
-                        Authorization: `Bearer ${process.env.NEXT_PUBLIC_MUSIC_TOKEN}`,
-                    },
-                });
-                if (!response.ok) throw new Error('Network response was not ok.');
-                const data = await response.json();
-                const urls = data.data[0].relationships.tracks.data.map(track => track.attributes.previews[0].url);
-                setTrackQueue(urls);
-                setIsLoading(false);
-            } catch (error) {
-                console.error('There was a problem with the fetch operation:', error);
-                setIsLoading(false);
-            }
-        };
+    const fetchPlaylistDetails = async () => {
+        const playlistId = 'pl.u-b3bM3L4hyljR5po';
+        const url = `https://api.music.apple.com/v1/catalog/gb/playlists/${playlistId}`;
+        try {
 
-        fetchPlaylistDetails();
-    }, []);
-
-    useEffect(() => {
-        // Handler to play next track when the current one ends
-        const playNextTrack = () => {
-            let nextIndex = currentTrackIndex + 1;
-            if (nextIndex < trackQueue.length) {
-                setCurrentTrackIndex(nextIndex);
-            } else {
-                setCurrentTrackIndex(-1); // Reset to no track
-            }
-        };
-
-        const audio = audioRef.current;
-        audio.addEventListener('ended', playNextTrack);
-        return () => audio.removeEventListener('ended', playNextTrack);
-    }, [currentTrackIndex, trackQueue]);
-
-    useEffect(() => {
-        // Play the track whenever currentTrackIndex changes
-        if (currentTrackIndex >= 0 && currentTrackIndex < trackQueue.length) {
-            const trackUrl = trackQueue[currentTrackIndex];
-            audioRef.current.src = trackUrl;
-            audioRef.current.play().catch(error => console.error('Error playing track:', error));
+            const response = await fetch(url, {
+                headers: {
+                    Authorization: `Bearer ${process.env.NEXT_PUBLIC_MUSIC_TOKEN}`,
+                },
+            });
+            if (!response.ok) throw new Error('Network response was not ok.');
+            const data = await response.json();
+            return data.data[0].relationships.tracks.data.map(track => track.attributes.previews[0].url);
+        } catch (error) {
+            console.error('There was a problem with the fetch operation:', error);
         }
-    }, [currentTrackIndex, trackQueue]);
+    };
 
-    const playMusic = () => {
-        if (currentTrackIndex < 0 && trackQueue.length > 0) {
-            console.log(1)
-            setCurrentTrackIndex(0); // Start playing from the first track
-        } else if (audioRef.current.paused) {
-            console.log(2)
-            audioRef.current.play();
+    const playNextTrack = () => {
+        currentTrackIndexRef.current += 1;
+        if (currentTrackIndexRef.current < trackQueue.length) {
+            const audio = new Audio(trackQueue[currentTrackIndexRef.current]);
+            setAudio(audio);
+            audio.play();
         } else {
-            console.log(3)
-            audioRef.current.pause();
+            setAudio(null);
+        }
+    };
+
+    useEffect(() => {
+        if (audio) {
+            audioRef.current = audio;
+            const endListener = () => {
+                playNextTrack();
+            };
+            audio.addEventListener('ended', endListener);
+            return () => audio.removeEventListener('ended', endListener);
+        }
+    }, [audio, trackQueue]);
+
+    const playMusic = async () => {
+        if (!audio && trackQueue.length > 0) {
+            const audio = new Audio(trackQueue[currentTrackIndexRef.current]);
+            setAudio(audio);
+            audio.play();
+        } else if (!audio && trackQueue.length === 0) {
+            setIsLoading(true)
+            const tracks = await fetchPlaylistDetails();
+            setIsLoading(false)
+            setTrackQueue(shuffleArray(tracks));
+            if (tracks.length > 0) {
+                const audio = new Audio(tracks[currentTrackIndexRef.current]);
+                setAudio(audio);
+                audio.play();
+            }
+        } else if (audio) {
+            audio.pause();
+            setAudio(null);
         }
     };
 
     return (
         <CapsuleButton
-            icon={isLoading ? "fa-spinner" : currentTrackIndex >= 0 ? "fa-pause" : "fa-headphones"}
+            icon={isLoading ? "fa-spinner" : audio ? "fa-pause" : "fa-headphones"}
             iconCallback={!isLoading ? playMusic : undefined}
+            iconActive={audio !== null}
             rightMargin
             small
             disabled={isLoading}
