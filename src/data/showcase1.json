@@ -1,7 +1,10 @@
 [
   {
     "id": 1,
-    "title": { "first": "A Night of", "second": "Experiences" },
+    "title": {
+      "first": "A Night of",
+      "second": "Experiences"
+    },
     "caption": "Visit",
     "image": "/custom-content/patch.mov",
     "video": true,
@@ -18,9 +21,12 @@
   },
   {
     "id": 2,
-    "title": { "first": "Best Cocktails", "second": "in London" },
+    "title": {
+      "first": "Best Cocktails",
+      "second": "in London"
+    },
     "caption": "Cocktails",
-    "image": "/custom-content/cocktail.jpeg",
+    "image": "/custom-content/cocktail.png",
     "video": false,
     "links": [
       {
@@ -31,7 +37,10 @@
   },
   {
     "id": 3,
-    "title": { "first": "House Beats &", "second": "Chic Music" },
+    "title": {
+      "first": "House Beats &",
+      "second": "Chic Music"
+    },
     "caption": "Music",
     "image": "/custom-content/patch-bar.jpg",
     "video": false,
@@ -44,9 +53,12 @@
   },
   {
     "id": 4,
-    "title": { "first": "Memorable Events", "second": "in the City" },
+    "title": {
+      "first": "Memorable Events",
+      "second": "in the City"
+    },
     "caption": "Events",
-    "image": "/custom-content/events.jpeg",
+    "image": "/custom-content/party.png",
     "video": false,
     "links": [
       {

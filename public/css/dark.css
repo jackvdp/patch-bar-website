@@ -63,8 +63,9 @@
 }
 
 .header-font {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Antonio', sans-serif;
   letter-spacing: 1px;
+  font-weight: 700;
 }
 
 * {
