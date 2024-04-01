@@ -22,7 +22,7 @@ export default function Cocktails() {
             </div>
             <NavbarFullMenu />
             <CocktailsHeader />
-            <div className="main-content">
+            <div className="main-content" id="main-content">
                 <CocktailGrid />
                 <Footer />
             </div>
