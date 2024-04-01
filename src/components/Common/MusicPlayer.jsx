@@ -55,7 +55,7 @@ const MusicPlayer = () => {
             audio.play();
         } else if (!audio && trackQueue.length === 0) {
             const tracks = await fetchPlaylistDetails();
-            setTrackQueue(tracks);
+            setTrackQueue(shuffleArray(tracks));
             if (tracks.length > 0) {
                 const audio = new Audio(tracks[currentTrackIndexRef.current]);
                 setAudio(audio);
@@ -73,3 +73,13 @@ const MusicPlayer = () => {
 };
 
 export default MusicPlayer;
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        // Generate a random index from 0 to i
+        const j = Math.floor(Math.random() * (i + 1));
+        // Swap elements at indices i and j
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
