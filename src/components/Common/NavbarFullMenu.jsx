@@ -26,7 +26,9 @@ function NavbarFullMenu({ theme, hideLogo }) {
           </div>
           <div className='valign menu-items'>
             <MusicPlayer />
-            <CapsuleButton text={"Book"} link={"/book"} rightMargin small />
+            <div className="d-none d-md-block">
+              <CapsuleButton text={"Book"} link={"/book"} rightMargin small />
+            </div>
             <div className="menu-icon valign">
               <NavbarToggleButton />
               <span className="text" data-splitting>
@@ -56,13 +58,12 @@ function NavbarFullMenu({ theme, hideLogo }) {
 function MenuItems() {
 
   const menuItems = [
-    { id: 1, name: 'Home', link: '/' },
-    { id: 2, name: 'Reservations', link: '/book' },
+    { id: 1, name: 'Locations', link: '/locations' },
+    { id: 2, name: 'Corporate Events', link: '/events' },
     { id: 3, name: 'Cocktails', link: '/cocktails' },
-    { id: 4, name: 'Corporate Events', link: '/events' },
-    { id: 5, name: 'Video Tour', link: '/tour' },
-    { id: 6, name: 'Gallery', link: '/gallery' },
-    { id: 7, name: 'Contact', link: '/contact' },
+    { id: 4, name: 'Video Tour', link: '/tour' },
+    { id: 5, name: 'Gallery', link: '/gallery' },
+    { id: 6, name: 'Contact', link: '/contact' },
   ];
 
   return (
@@ -77,7 +78,15 @@ function MenuItems() {
             </div>
           </li>
         ))}
+        <li>
+          <div className="o-hidden">
+            <div className="d-block d-md-none link">
+              <CapsuleButton text={"Book"} link={"/book"} rightMargin small />
+            </div>
+          </div>
+        </li>
       </ul>
+
     </div>
   )
 }
