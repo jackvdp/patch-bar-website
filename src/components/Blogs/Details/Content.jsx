@@ -3,7 +3,7 @@ import React from 'react'
 function Content() {
   return (
     <div className="content pt-60">
-      <div className="row justify-content-center">
+      {/* <div className="row justify-content-center">
         <div className="col-lg-10">
           <div className="cont">
             <h4 className="extra-title">
@@ -128,7 +128,7 @@ function Content() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
