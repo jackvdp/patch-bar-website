@@ -8,7 +8,6 @@ import MusicPlayer from './MusicPlayer';
 
 function NavbarFullMenu({ theme, hideLogo }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [musicPlaying, setMusicPlaying] = useState(false);
 
   useEffect(() => {
     initFullNavbarMenu(setIsMenuOpen);
@@ -16,14 +15,10 @@ function NavbarFullMenu({ theme, hideLogo }) {
 
   const logoClass = (hideLogo && !isMenuOpen) ? 'logo-leaving' : 'logo-entering';
 
-  const startMusic = () => {
-    setMusicPlaying(!musicPlaying)
-  }
-
   return (
     <>
       <div id="navi" className={`topnav ${theme ? (theme === 'light' ? 'light' : '') : ''}`}>
-        <div className="container-fluid">
+        <div className="container-fluid valign">
           <div className="logo">
             <a href="/" className={logoClass}>
               <img src="/custom-content/logo-white.svg" alt="logo" />

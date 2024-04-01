@@ -64,7 +64,6 @@ function SiteColumn({ name, address, email, phone }) {
 }
 
 function RightColumn() {
-
   return (
     <div className="item">
       <div className="logo">
@@ -77,7 +76,6 @@ function RightColumn() {
       </div>
     </div>
   )
-
 }
 
 export default Footer
