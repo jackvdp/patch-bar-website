@@ -71,7 +71,7 @@ const MusicPlayer = () => {
 
     return (
         <CapsuleButton
-            icon={isLoading ? "fa-spinner" : audio ? "fa-pause" : "fa-play"}
+            icon={isLoading ? "fa-spinner" : audio ? "fa-pause" : "fa-headphones"}
             iconCallback={!isLoading ? playMusic : undefined}
             iconActive={audio !== null}
             rightMargin

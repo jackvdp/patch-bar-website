@@ -25,7 +25,7 @@ function NavbarFullMenu({ theme, hideLogo }) {
       <div id="navi" className={`topnav ${theme ? (theme === 'light' ? 'light' : '') : ''}`}>
         <div className="container-fluid">
           <div className="logo">
-            <a href="#0" className={logoClass}>
+            <a href="/" className={logoClass}>
               <img src="/custom-content/logo-white.svg" alt="logo" />
             </a>
           </div>

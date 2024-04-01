@@ -3,11 +3,11 @@ import React from 'react';
 import Loading from '@/components/Common/Loader';
 import NavbarFullMenu from '@/components/Common/NavbarFullMenu';
 import CocktailsHeader from '@/components/Headers/CocktailsHeader';
-import Works from '@/components/Works/WorksStyle2';
+import CocktailGrid from '@/components/Works/CocktailGrid';
 import Footer from '@/components/Common/Footer';
 
 export const metadata = {
-    title: 'Vie - Works 3 Dark'
+    title: 'Patch - Cocktails'
 }
 
 export default function Cocktails() {
@@ -23,7 +23,7 @@ export default function Cocktails() {
             <NavbarFullMenu />
             <CocktailsHeader />
             <div className="main-content">
-                <Works grid={2} hideFilter={true} filterPosition="center" />
+                <CocktailGrid grid={2} hideFilter={true} filterPosition="center" />
                 <Footer />
             </div>
         </>
