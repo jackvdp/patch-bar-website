@@ -29,7 +29,7 @@ function CocktailGrid() {
 
 export default CocktailGrid;
 
-function Cocktail({item, index}) {
+function Cocktail({ item, index }) {
   return (
     <div key={index} className={`${grid === 3 ? 'col-lg-4 col-md-6' : grid === 2 ? 'col-md-6' : 'col-12'} items graphic wow fadeInUp`} data-wow-delay=".4s">
       <div className="item-img">
@@ -37,9 +37,17 @@ function Cocktail({item, index}) {
           <Image
             src={item.imgUrl}
             alt="image"
+            layout="responsive"
             width={500}
             height={625}
           />
+          <div className="recipe-overlay">
+            <ol>
+              {item.steps.map((step, idx) => (
+                <li key={idx}>{step}</li>
+              ))}
+            </ol>
+          </div>
         </div>
         <div className="item-img-overlay"></div>
       </div>
@@ -51,18 +59,8 @@ function Cocktail({item, index}) {
   )
 }
 
+
 const cocktails = [
-  {
-    title: 'Spicy Margarita',
-    shortDescription: 'Spicy, Sour, Zesty',
-    imgUrl: '/custom-content/cocktails/spicymarg.png',
-    steps: [
-      'Rim glass with salt.',
-      'Combine tequila, lime juice, agave syrup, and jalapeños.',
-      'Shake with ice and strain.',
-      'Garnish with lime wheel and jalapeño.'
-    ]
-  },
   {
     title: 'Pink Geisha',
     shortDescription: 'Fruity, Floral, Elegant',
@@ -72,6 +70,17 @@ const cocktails = [
       'Add gin, sake, and elderflower liqueur.',
       'Shake with ice and double strain.',
       'Garnish with a raspberry.'
+    ]
+  },
+  {
+    title: 'Spicy Margarita',
+    shortDescription: 'Spicy, Sour, Zesty',
+    imgUrl: '/custom-content/cocktails/spicymarg.png',
+    steps: [
+      'Rim glass with salt.',
+      'Combine tequila, lime juice, agave syrup, and jalapeños.',
+      'Shake with ice and strain.',
+      'Garnish with lime wheel and jalapeño.'
     ]
   },
   {
