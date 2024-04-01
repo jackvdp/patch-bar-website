@@ -9,7 +9,6 @@ const MusicPlayer = () => {
     const audioRef = useRef(null);
 
     const fetchPlaylistDetails = async () => {
-        console.log(process.env.NEXT_PUBLIC_MUSIC_TOKEN)
         const playlistId = 'pl.u-b3bM3L4hyljR5po';
         const url = `https://api.music.apple.com/v1/catalog/gb/playlists/${playlistId}`;
         try {
@@ -86,9 +85,7 @@ export default MusicPlayer;
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
-        // Generate a random index from 0 to i
         const j = Math.floor(Math.random() * (i + 1));
-        // Swap elements at indices i and j
         [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
