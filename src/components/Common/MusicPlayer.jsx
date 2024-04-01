@@ -4,6 +4,7 @@ import CapsuleButton from './CapsuleButton';
 const MusicPlayer = () => {
     const [audio, setAudio] = useState(null);
     const [trackQueue, setTrackQueue] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
     const currentTrackIndexRef = useRef(0);
     const audioRef = useRef(null);
 
@@ -54,7 +55,9 @@ const MusicPlayer = () => {
             setAudio(audio);
             audio.play();
         } else if (!audio && trackQueue.length === 0) {
+            setIsLoading(true)
             const tracks = await fetchPlaylistDetails();
+            setIsLoading(false)
             setTrackQueue(shuffleArray(tracks));
             if (tracks.length > 0) {
                 const audio = new Audio(tracks[currentTrackIndexRef.current]);
@@ -68,7 +71,14 @@ const MusicPlayer = () => {
     };
 
     return (
-        <CapsuleButton icon={"fa-headphones"} iconCallback={playMusic} iconActive={audio !== null} rightMargin small />
+        <CapsuleButton
+            icon={isLoading ? "fa-spinner" : audio ? "fa-pause" : "fa-play"}
+            iconCallback={!isLoading ? playMusic : undefined}
+            iconActive={audio !== null}
+            rightMargin
+            small
+            disabled={isLoading}
+        />
     );
 };
 
