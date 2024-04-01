@@ -3,7 +3,7 @@ import React from 'react';
 function ContactFormS({ noLine }) {
   return (
     <section className="contact-sec section-padding position-re">
-      <div className="container">
+      {/* <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-8 col-md-10">
             <div className="sec-head text-center">
@@ -59,7 +59,7 @@ function ContactFormS({ noLine }) {
       {
         !noLine &&
         <div className="line bottom left"></div>
-      }
+      } */}
     </section>
   )
 }
