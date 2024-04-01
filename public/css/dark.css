@@ -68,6 +68,11 @@
   font-weight: 700;
 }
 
+.header-font-orange {
+  /* font-style: italic !important; */
+  color: rgb(255, 132, 0) !important
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -1684,13 +1689,26 @@ span:hover {
   font-weight: 500;
   letter-spacing: 2px;
   border: 1px solid transparent;
-  margin-top: 40px;
   text-transform: uppercase;
   text-align: center;
   display: inline-block;
   cursor: pointer;
   text-decoration: none;
   line-height: 1.5;
+}
+
+.custom-butn.custom-bord.small {
+  padding: 5px 15px;
+}
+
+.custom-butn.custom-bord.small.orange {
+  background: rgb(255, 132, 0);
+  border: 2px solid rgb(255, 132, 0);
+  color: rgba(45, 50, 80, 1);
+}
+
+.custom-butn.custom-bord.small.orange:hover {
+  filter: brightness(1.2);
 }
 
 .custom-butn.custom-bord {
@@ -1982,6 +2000,10 @@ span:hover {
 
 .topnav .logo {
   width: 150px;
+}
+
+.topnav .menu-items {
+  margin-left: auto;
 }
 
 .topnav .menu-icon {

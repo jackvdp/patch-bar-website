@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 //= Scripts
 import initFullNavbarMenu from "@/common/initFullNavbarMenu";
 import NavbarToggleButton from "@/components/Common/Hamburger";
+import CapsuleButton from './CapsuleButton';
 
 function NavbarFullMenu({ theme, hideLogo }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,6 +14,10 @@ function NavbarFullMenu({ theme, hideLogo }) {
 
   const logoClass = (hideLogo && !isMenuOpen) ? 'logo-leaving' : 'logo-entering';
 
+  const startMusic = () => {
+    alert("Music started");
+  }
+
   return (
     <>
       <div id="navi" className={`topnav ${theme ? (theme === 'light' ? 'light' : '') : ''}`}>
@@ -22,11 +27,15 @@ function NavbarFullMenu({ theme, hideLogo }) {
               <img src="/custom-content/logo-white.svg" alt="logo" />
             </a>
           </div>
-          <div className="menu-icon valign">
-            <NavbarToggleButton />
-            <span className="text" data-splitting>
-              <span className="menu-text">Menu</span>
-            </span>
+          <div className='valign menu-items'>
+            <CapsuleButton text={""} link={"/book"} icon={"fa-headphones"} iconCallback={startMusic} rightMargin small />
+            <CapsuleButton text={"Book"} link={"/book"} rightMargin small />
+            <div className="menu-icon valign">
+              <NavbarToggleButton />
+              <span className="text" data-splitting>
+                <span className="menu-text">Menu</span>
+              </span>
+            </div>
           </div>
         </div>
       </div>

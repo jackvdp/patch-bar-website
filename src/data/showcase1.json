@@ -22,7 +22,7 @@
   {
     "id": 2,
     "title": {
-      "first": "Best Cocktails",
+      "first": "Best <span class=\"header-font-orange \">Cocktails</span>",
       "second": "in London"
     },
     "caption": "Cocktails",
@@ -39,7 +39,7 @@
     "id": 3,
     "title": {
       "first": "House Beats &",
-      "second": "Chic Music"
+      "second": "Chic <span class=\"header-font-orange \">Music</span>"
     },
     "caption": "Music",
     "image": "/custom-content/patch-bar.jpg",
@@ -54,7 +54,7 @@
   {
     "id": 4,
     "title": {
-      "first": "Memorable Events",
+      "first": "Memorable <span class=\"header-font-orange \">Events</span>",
       "second": "in the City"
     },
     "caption": "Events",

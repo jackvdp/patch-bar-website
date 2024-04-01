@@ -110,14 +110,10 @@ function VideoComponent({ slide }) {
 function Title({ slide }) {
   return (
     <h1 className='header-font'>
-      <Link href="/project-details2/project-details2-dark">
-        <div className="stroke header-font" data-swiper-parallax="-2000">
-          {slide.title.first}
-        </div>
-        <span className="header-font" data-swiper-parallax="-5000">
-          {slide.title.second}
-        </span>
-      </Link>
+      <div className="stroke header-font" data-swiper-parallax="-2000" dangerouslySetInnerHTML={{ __html: slide.title.first }}>
+      </div>
+      <span className="header-font" data-swiper-parallax="-5000" dangerouslySetInnerHTML={{ __html: slide.title.second }}>
+      </span>
     </h1>
   )
 }
@@ -126,7 +122,7 @@ function ExploreMore({ slide }) {
   return (
     <div className='custom-gap'>
       {slide.links.map((link, index) => (
-        <CapsuleButton key={index} text={link.title} link={link.url} />
+        <CapsuleButton key={index} text={link.title} link={link.url} topMargin />
       ))}
     </div>
   );
