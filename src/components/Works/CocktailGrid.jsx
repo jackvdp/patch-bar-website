@@ -3,8 +3,9 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import initIsotope from "@/common/initIsotope";
 
-function CocktailGrid({ grid }) {
+const grid = 3
 
+function CocktailGrid() {
   useEffect(() => {
     setTimeout(() => {
       initIsotope();
@@ -17,23 +18,7 @@ function CocktailGrid({ grid }) {
         <div className="row">
           <div className="gallery full-width">
             {cocktails.map((item, index) => (
-              <div key={index} className={`${grid === 3 ? 'col-lg-4 col-md-6' : grid === 2 ? 'col-md-6' : 'col-12'} items graphic wow fadeInUp`} data-wow-delay=".4s">
-                <div className="item-img">
-                  <div className='imago wow'>
-                    <Image
-                      src={item.imgUrl}
-                      alt="image"
-                      width={500}
-                      height={625}
-                    />
-                  </div>
-                  <div className="item-img-overlay"></div>
-                </div>
-                <div className="cont">
-                  <h6>{item.title}</h6>
-                  <span>{item.shortDescription}</span>
-                </div>
-              </div>
+              <Cocktail key={index} item={item} />
             ))}
           </div>
         </div>
@@ -43,6 +28,28 @@ function CocktailGrid({ grid }) {
 }
 
 export default CocktailGrid;
+
+function Cocktail({item, index}) {
+  return (
+    <div key={index} className={`${grid === 3 ? 'col-lg-4 col-md-6' : grid === 2 ? 'col-md-6' : 'col-12'} items graphic wow fadeInUp`} data-wow-delay=".4s">
+      <div className="item-img">
+        <div className='imago wow'>
+          <Image
+            src={item.imgUrl}
+            alt="image"
+            width={500}
+            height={625}
+          />
+        </div>
+        <div className="item-img-overlay"></div>
+      </div>
+      <div className="cont">
+        <h6>{item.title}</h6>
+        <span>{item.shortDescription}</span>
+      </div>
+    </div>
+  )
+}
 
 const cocktails = [
   {

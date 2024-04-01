@@ -23,7 +23,7 @@ export default function Cocktails() {
             <NavbarFullMenu />
             <CocktailsHeader />
             <div className="main-content">
-                <CocktailGrid grid={2} hideFilter={true} filterPosition="center" />
+                <CocktailGrid />
                 <Footer />
             </div>
         </>
