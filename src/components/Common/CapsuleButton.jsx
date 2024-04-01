@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-function CapsuleButton({ text, link, topMargin, rightMargin, small, icon, iconCallback }) {
+function CapsuleButton({ text, link, topMargin, rightMargin, small, icon, iconCallback, iconActive }) {
     return (
-        <div className={`custom-butn custom-bord ${topMargin && "mt-40"} ${rightMargin && "mr-4"} ${small && "small"} ${small && !icon && "orange"}`}  data-swiper-parallax="-8000">
+        <div className={`custom-butn custom-bord ${topMargin && "mt-40"} ${rightMargin && "mr-4"} ${small && "small"} ${small && (!icon || iconActive) && "orange"}`}  data-swiper-parallax="-8000">
             {
                 icon ?
                     <i onClick={iconCallback} className={`fas ${icon}`}></i>

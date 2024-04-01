@@ -7,6 +7,7 @@ import CapsuleButton from './CapsuleButton';
 
 function NavbarFullMenu({ theme, hideLogo }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [musicPlaying, setMusicPlaying] = useState(false);
 
   useEffect(() => {
     initFullNavbarMenu(setIsMenuOpen);
@@ -15,7 +16,7 @@ function NavbarFullMenu({ theme, hideLogo }) {
   const logoClass = (hideLogo && !isMenuOpen) ? 'logo-leaving' : 'logo-entering';
 
   const startMusic = () => {
-    alert("Music started");
+    setMusicPlaying(!musicPlaying)
   }
 
   return (
@@ -28,7 +29,7 @@ function NavbarFullMenu({ theme, hideLogo }) {
             </a>
           </div>
           <div className='valign menu-items'>
-            <CapsuleButton text={""} link={"/book"} icon={"fa-headphones"} iconCallback={startMusic} rightMargin small />
+            <CapsuleButton icon={"fa-headphones"} iconCallback={startMusic} iconActive={musicPlaying} rightMargin small />
             <CapsuleButton text={"Book"} link={"/book"} rightMargin small />
             <div className="menu-icon valign">
               <NavbarToggleButton />
