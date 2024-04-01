@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import initFullNavbarMenu from "@/common/initFullNavbarMenu";
 import NavbarToggleButton from "@/components/Common/Hamburger";
 import CapsuleButton from './CapsuleButton';
+import MusicPlayer from './MusicPlayer';
 
 function NavbarFullMenu({ theme, hideLogo }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,7 +30,7 @@ function NavbarFullMenu({ theme, hideLogo }) {
             </a>
           </div>
           <div className='valign menu-items'>
-            <CapsuleButton icon={"fa-headphones"} iconCallback={startMusic} iconActive={musicPlaying} rightMargin small />
+            <MusicPlayer />
             <CapsuleButton text={"Book"} link={"/book"} rightMargin small />
             <div className="menu-icon valign">
               <NavbarToggleButton />
@@ -72,8 +73,8 @@ function MenuItems() {
   return (
     <div className="menu-links">
       <ul className="main-menu">
-        {menuItems.map(item => (
-          <li>
+        {menuItems.map((item, index) => (
+          <li key={index}>
             <div className="o-hidden">
               <a className="link" href={item.link}>
                 <span className="nm">0{item.id}.</span>{item.name}
@@ -97,8 +98,8 @@ function ContactInfo() {
 
   return (
     <div className="cont-info">
-      {contactInfo.map(item => (
-        <div className="item">
+      {contactInfo.map((item, index) => (
+        <div key={index} className="item">
           <h6>{item.name} :</h6>
           <p>
             {item.link ? <a href={item.link + item.value}>{item.value}</a> : item.value}
