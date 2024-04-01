@@ -1,7 +1,7 @@
 'use client';
 import React, { useRef, useEffect } from 'react';
 
-function WorksHeader() {
+function CocktailsHeader() {
   const fixedSlider = useRef();
 
   useEffect(() => {
@@ -13,21 +13,19 @@ function WorksHeader() {
   }, []);
 
   return (
-    <header ref={fixedSlider} className="works-header fixed-slider hfixd valign sub-bg">
+    <header ref={fixedSlider} className="works-header works-header-bg fixed-slider hfixd valign sub-bg">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-7 col-md-9 static">
             <div className="capt mt-50">
               <div className="parlx text-center">
-                <h1 className="color-font">amazing works</h1>
-                <p>
-                  Creativity involves breaking out of expected &amp; repeatable
-                  patterns in order to look at things in different way than ever
-                  before.
+                <h1 className="color-font">Cocktails</h1>
+                <p style={{ color: "white" }}>
+                  Discover our curated list of cocktails to savor the unique flavors of Patch, or bring a taste of our experience into your home with recipes perfect for crafting your own spirited creations.
                 </p>
               </div>
               <div className="bactxt custom-font valign">
-                <span className="full-width">Works</span>
+                <span className="full-width">Cocktails</span>
               </div>
             </div>
           </div>
@@ -37,4 +35,4 @@ function WorksHeader() {
   )
 }
 
-export default WorksHeader
+export default CocktailsHeader

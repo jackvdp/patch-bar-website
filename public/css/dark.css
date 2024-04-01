@@ -176,13 +176,19 @@ span:hover {
       left top,
       right top,
       from(#12c2e9),
-      color-stop(#c471ed),
-      to(#f64f59));
-  background: -webkit-linear-gradient(left, #12c2e9, #c471ed, #f64f59);
-  background: -o-linear-gradient(left, #12c2e9, #c471ed, #f64f59);
-  background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+      to(rgb(255, 132, 0)));
+  background: -webkit-linear-gradient(left, #12c2e9, rgb(255, 132, 0));
+  background: -o-linear-gradient(left, #12c2e9, rgb(255, 132, 0));
+  background: linear-gradient(to right, #12c2e9, rgb(255, 132, 0));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: 'Antonio', sans-serif;
+}
+
+.works-header-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/custom-content/cocktail.jpeg') !important;
+  background-size: cover !important;
+  background-position: center !important;
 }
 
 .back-color {
@@ -3486,9 +3492,9 @@ span:hover {
   top: -250px;
   right: -250px;
   bottom: auto;
-  background-image: -webkit-linear-gradient(45deg, #fb5343, #6549d5);
-  background-image: -o-linear-gradient(45deg, #fb5343, #6549d5);
-  background-image: linear-gradient(45deg, #fb5343, #6549d5);
+  background-image: -webkit-linear-gradient(45deg, #fb5343, rgb(255, 132, 0));
+  background-image: -o-linear-gradient(45deg, #fb5343, rgb(255, 132, 0));
+  background-image: linear-gradient(45deg, #fb5343, rgb(255, 132, 0));
 }
 
 .main-content {
