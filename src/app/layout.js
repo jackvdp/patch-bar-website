@@ -9,6 +9,7 @@ import generateStylesheetObject from '@/common/generateStylesheetsObject';
 //= Common Components
 import Cursor from "@/components/Common/Cursor";
 import ProgressScroll from "@/components/Common/ProgressScroll";
+import { MusicPlayerProvider } from "@/components/Common/MusicPlayerContext";
 
 export const metadata = {
   title: 'Patch Bar – the hottest cocktail bar in London',
@@ -30,7 +31,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <>
+        <MusicPlayerProvider>
           <Cursor />
           <ProgressScroll />
           {children}
@@ -41,7 +42,8 @@ export default function RootLayout({ children }) {
           <Script strategy="beforeInteractive" src="/js/isotope.pkgd.min.js"></Script>
           <Script strategy="lazyOnload" src="/js/pace.min.js"></Script>
           <Script strategy="lazyOnload" src="/js/wowInit.js"></Script>
-        </>
+
+        </MusicPlayerProvider>
       </body>
     </html>
   )
