@@ -9,9 +9,11 @@ const MusicPlayerButton = () => {
         <CapsuleButton
             text="Play/Pause"
             icon={isLoading ? "fa-spinner" : audio ? "fa-pause" : "fa-headphones"}
-            iconCallback={playMusic}
+            iconCallback={!isLoading ? playMusic : undefined}
+            iconActive={audio !== null}
             rightMargin
             small
+            disabled={isLoading}
         />
     );
 };

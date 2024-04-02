@@ -5,6 +5,7 @@ import initFullNavbarMenu from "@/common/initFullNavbarMenu";
 import NavbarToggleButton from "@/components/Common/Hamburger";
 import CapsuleButton from './CapsuleButton';
 import MusicPlayer from './MusicPlayer';
+import Link from 'next/link';
 
 function NavbarFullMenu({ theme, hideLogo }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,9 +21,9 @@ function NavbarFullMenu({ theme, hideLogo }) {
       <div id="navi" className={`topnav ${theme ? (theme === 'light' ? 'light' : '') : ''}`}>
         <div className="container-fluid valign">
           <div className="logo">
-            <a href="/" className={logoClass}>
+            <Link href="/" className={logoClass}>
               <img src="/custom-content/logo-white.svg" alt="logo" />
-            </a>
+            </Link>
           </div>
           <div className='valign menu-items'>
             <MusicPlayer />
